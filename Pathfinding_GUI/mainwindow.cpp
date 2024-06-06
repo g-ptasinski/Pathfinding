@@ -8,7 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
   ui->setupUi(this);
 
   scene = new QGraphicsScene(this);
-  scene->addText("Hello, world!");
+  scene->addRect(-400,-20,50,50, QPen(Qt::black) , QBrush(Qt::white));
+  scene->addRect(-40,-20,50,50, QPen(Qt::black) , QBrush(Qt::white));
 
   ui->graphicsView->setScene(scene);
 }
