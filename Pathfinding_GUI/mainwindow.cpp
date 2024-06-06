@@ -6,6 +6,11 @@ MainWindow::MainWindow(QWidget *parent)
   , ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
+
+  scene = new QGraphicsScene(this);
+  scene->addText("Hello, world!");
+
+  ui->graphicsView->setScene(scene);
 }
 
 MainWindow::~MainWindow()
