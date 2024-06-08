@@ -35,6 +35,8 @@ private slots:
 
   void on_Height_valueChanged(int arg1);
 
+  void GenerateGridView( void );
+
 private:
   Ui::MainWindow *ui;
   QGraphicsScene *scene;

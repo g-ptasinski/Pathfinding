@@ -13,6 +13,8 @@ class grid
     ~grid(){};
 
     void getNodes();
+    int getWidth();
+    int getHeight();
 
   private:
 
