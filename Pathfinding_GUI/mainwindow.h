@@ -20,9 +20,8 @@ public:
   ~MainWindow();
 
 private slots:
-  void on_widget_customContextMenuRequested(const QPoint &pos);
 
-  void on_Height_textChanged(const QString &arg1);
+  void on_pushButton_2_clicked();
 
 private:
   Ui::MainWindow *ui;
