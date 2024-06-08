@@ -91,7 +91,7 @@
      <item row="1" column="0">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QComboBox" name="comboBox">
+        <widget class="QComboBox" name="AlgorithmsList">
          <item>
           <property name="text">
            <string>BreadthFirst</string>
@@ -105,14 +105,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="GenerateGrid">
          <property name="text">
           <string>Generate Grid</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="Simulate">
          <property name="text">
           <string>Simulate</string>
          </property>
