@@ -37,12 +37,16 @@ private slots:
 
   void GenerateGridView( void );
 
+  void on_graphicsView_rubberBandChanged(const QRect &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint);
+
 private:
   Ui::MainWindow *ui;
   QGraphicsScene *scene;
 
-  int Height;
-  int Width;
+  int m_GridHeight;
+  int m_GridWidth;
+  int m_ViewHeight;
+  int m_ViewWidth;
 
   std::unique_ptr<grid> map;
 };
