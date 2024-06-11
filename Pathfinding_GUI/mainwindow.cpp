@@ -9,13 +9,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
   ui->setupUi(this);
 
-
-
   m_GridHeight = 10;
   m_GridWidth = 10;
 
   m_ViewWidth = ui->graphicsView->width();
   m_ViewHeight = ui->graphicsView->height();
+
 }
 
 MainWindow::~MainWindow()
@@ -47,6 +46,7 @@ void MainWindow::GenerateGridView( void )
       scene->addItem(rec);
       }
     }
+
   ui->graphicsView->resize( 880, 880 );
 }
 
