@@ -51,5 +51,6 @@ private:
   int m_RectHeight;
 
   std::unique_ptr<grid> map;
+  std::vector<QGraphicsRectItem *>  RectItemMap;
 };
 #endif // MAINWINDOW_H

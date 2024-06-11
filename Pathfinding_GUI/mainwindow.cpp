@@ -27,11 +27,11 @@ void MainWindow::GenerateGridView( void )
   m_ViewWidth = ui->graphicsView->width();
   m_ViewHeight = ui->graphicsView->height();
 
-  m_RectWidth = 850/(m_GridWidth);
-  m_RectHeight =850/(m_GridHeight);
+  m_RectWidth   = 850/(m_GridWidth);
+  m_RectHeight  = 850/(m_GridHeight);
 
-  int rectsize = ( m_RectWidth > m_RectHeight) ? m_RectHeight : m_RectWidth ;
-  int linewidth = 3;
+  int rectsize    = ( m_RectWidth > m_RectHeight) ? m_RectHeight : m_RectWidth ;
+  int linewidth  = 3;
 
   QGraphicsScene *scene = new QGraphicsScene;
   ui->graphicsView->setScene(scene);
@@ -44,6 +44,7 @@ void MainWindow::GenerateGridView( void )
       rec->setBrush(Qt::white);
       rec->setPos(i * rectsize, j * rectsize);
       scene->addItem(rec);
+      RectItemMap.push_back(rec);
       }
     }
 
@@ -53,6 +54,7 @@ void MainWindow::GenerateGridView( void )
 void MainWindow::on_Simulate_clicked()
 {
     map->getNodes();
+    RectItemMap[0]->setBrush(Qt::red);
     //TODO ADD SIMULATION
 }
 
