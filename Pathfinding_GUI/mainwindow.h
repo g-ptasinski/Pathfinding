@@ -47,6 +47,8 @@ private:
   int m_GridWidth;
   int m_ViewHeight;
   int m_ViewWidth;
+  int m_RectWidth;
+  int m_RectHeight;
 
   std::unique_ptr<grid> map;
 };

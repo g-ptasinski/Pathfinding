@@ -6,17 +6,48 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>811</width>
-    <height>620</height>
+    <width>1219</width>
+    <height>916</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1219</width>
+    <height>916</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1219</width>
+    <height>916</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
    <layout class="QGridLayout" name="gridLayout_3">
-    <item row="1" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+    <item row="1" column="2">
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="minimumSize">
+       <size>
+        <width>672</width>
+        <height>571</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+     </widget>
     </item>
     <item row="1" column="1">
      <layout class="QGridLayout" name="gridLayout">
@@ -33,7 +64,14 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Width"/>
+         <widget class="QSpinBox" name="Width">
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_2">
@@ -43,7 +81,14 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Height"/>
+         <widget class="QSpinBox" name="Height">
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QComboBox" name="AlgorithmsList">
@@ -77,18 +122,8 @@
       </item>
      </layout>
     </item>
-    <item row="1" column="2">
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="minimumSize">
-       <size>
-        <width>621</width>
-        <height>571</height>
-       </size>
-      </property>
-      <property name="mouseTracking">
-       <bool>true</bool>
-      </property>
-     </widget>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2"/>
     </item>
    </layout>
    <widget class="QWidget" name="layoutWidget">
@@ -109,7 +144,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>811</width>
+     <width>1219</width>
      <height>23</height>
     </rect>
    </property>

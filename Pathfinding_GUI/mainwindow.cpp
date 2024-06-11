@@ -1,4 +1,5 @@
 #include <iostream>
+#include <QGraphicsItem>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -8,10 +9,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
   ui->setupUi(this);
 
-  scene = new QGraphicsScene(this);
 
 
-  ui->graphicsView->setScene(scene);
+  m_GridHeight = 10;
+  m_GridWidth = 10;
 
   m_ViewWidth = ui->graphicsView->width();
   m_ViewHeight = ui->graphicsView->height();
@@ -27,10 +28,26 @@ void MainWindow::GenerateGridView( void )
   m_ViewWidth = ui->graphicsView->width();
   m_ViewHeight = ui->graphicsView->height();
 
-  scene->addRect(0,0,50,50, QPen(Qt::black) , QBrush(Qt::white));
-  scene->addRect(100,100,50,50, QPen(Qt::black) , QBrush(Qt::white));
+  m_RectWidth = 850/(m_GridWidth);
+  m_RectHeight =850/(m_GridHeight);
 
-   std::cout<<m_ViewHeight<< "x" << m_ViewWidth<<std::endl;
+  int rectsize = ( m_RectWidth > m_RectHeight) ? m_RectHeight : m_RectWidth ;
+  int linewidth = 3;
+
+  QGraphicsScene *scene = new QGraphicsScene;
+  ui->graphicsView->setScene(scene);
+
+  for (int i = 0; i < m_GridHeight; i++)
+    {
+    for (int j = 0; j < m_GridWidth; j++)
+      {
+      QGraphicsRectItem *rec = new QGraphicsRectItem(0, 0, rectsize-linewidth, rectsize-linewidth);
+      rec->setBrush(Qt::white);
+      rec->setPos(i * rectsize, j * rectsize);
+      scene->addItem(rec);
+      }
+    }
+  ui->graphicsView->resize( 880, 880 );
 }
 
 void MainWindow::on_Simulate_clicked()
