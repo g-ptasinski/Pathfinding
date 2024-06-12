@@ -3,6 +3,7 @@
 #include <QMouseEvent>
 
 #include "mainwindow.h"
+#include "graphicalnode.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -42,9 +43,10 @@ void MainWindow::GenerateGridView( void )
     {
     for (int j = 0; j < m_GridWidth; j++)
       {
-      QGraphicsRectItem *rec = new QGraphicsRectItem(0, 0, rectsize-linewidth, rectsize-linewidth);
+      GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth);
       rec->setBrush(Qt::white);
       rec->setPos(i * rectsize, j * rectsize);
+      rec->setAcceptHoverEvents(true);
       scene->addItem(rec);
       RectItemMap.push_back(rec);
       }
@@ -77,6 +79,7 @@ void MainWindow::on_Height_valueChanged(int arg1)
 {
     m_GridHeight = arg1;
 }
+
 
 
 
