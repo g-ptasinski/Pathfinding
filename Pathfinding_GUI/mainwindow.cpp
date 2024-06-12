@@ -1,5 +1,7 @@
 #include <iostream>
 #include <QGraphicsItem>
+#include <QMouseEvent>
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -49,11 +51,12 @@ void MainWindow::GenerateGridView( void )
     }
 
   ui->graphicsView->resize( 880, 880 );
+
+
 }
 
 void MainWindow::on_Simulate_clicked()
 {
-    map->getNodes();
     RectItemMap[0]->setBrush(Qt::red);
     //TODO ADD SIMULATION
 }
