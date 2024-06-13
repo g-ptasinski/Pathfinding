@@ -39,28 +39,33 @@ void MainWindow::GenerateGridView( void )
   QGraphicsScene *scene = new QGraphicsScene;
   ui->graphicsView->setScene(scene);
 
+  int tmpID = 0;
+
   for (int i = 0; i < m_GridHeight; i++)
     {
     for (int j = 0; j < m_GridWidth; j++)
       {
-      GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth);
-      rec->setBrush(Qt::white);
+      GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth, tmpID);
+
       rec->setPos(i * rectsize, j * rectsize);
-      rec->setAcceptHoverEvents(true);
+
       scene->addItem(rec);
       RectItemMap.push_back(rec);
+
+      tmpID++;
       }
     }
 
   ui->graphicsView->resize( 880, 880 );
 
-
 }
 
 void MainWindow::on_Simulate_clicked()
 {
-    RectItemMap[0]->setBrush(Qt::red);
-    //TODO ADD SIMULATION
+    for(GraphicalNode *item : RectItemMap)
+    {
+        item->getNodeID();
+    }
 }
 
 void MainWindow::on_GenerateGrid_clicked()

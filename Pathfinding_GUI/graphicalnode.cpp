@@ -13,3 +13,13 @@ void GraphicalNode::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
   this->update();
 }
 
+void GraphicalNode::getNodeID()
+{
+  std::cout<<m_nodeID<<std::endl;
+  //return m_nodeID;
+}
+
+void GraphicalNode::setVisited()
+{
+  m_visited = true;
+}

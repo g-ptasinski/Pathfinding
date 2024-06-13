@@ -12,6 +12,7 @@
 
 #include "grid.h"
 #include "pathnode.h"
+#include "graphicalnode.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -51,6 +52,6 @@ private:
   int m_RectHeight;
 
   std::unique_ptr<grid> map;
-  std::vector<QGraphicsRectItem *>  RectItemMap;
+  std::vector<GraphicalNode *>  RectItemMap;
 };
 #endif // MAINWINDOW_H
