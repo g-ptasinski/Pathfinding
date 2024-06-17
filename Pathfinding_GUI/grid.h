@@ -4,7 +4,7 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-#include<pathnode.h>
+#include<graphicalnode.h>
 
 class grid
 {
@@ -21,7 +21,7 @@ class grid
     int m_width;
     int m_height;
 
-    std::vector<std::unique_ptr<pathnode>> m_NodeList;
+    std::vector<std::unique_ptr<GraphicalNode>> m_NodeList;
 };
 
 #endif // GRID_H

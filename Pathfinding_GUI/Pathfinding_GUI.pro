@@ -10,16 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     graphicalnode.cpp \
-    grid.cpp \
     main.cpp \
-    mainwindow.cpp \
-    pathnode.cpp
+    mainwindow.cpp
 
 HEADERS += \
     graphicalnode.h \
-    grid.h \
-    mainwindow.h \
-    pathnode.h
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui

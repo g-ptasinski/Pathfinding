@@ -4,13 +4,14 @@
 #include <QGraphicsRectItem>
 #include <QtGui>
 #include <QStyle>
-/*
+
 enum NodeTypes
 {
     NODE = 0,
     START,
-    FINISH
-};*/
+    FINISH,
+    BLOCKED
+};
 
 class GraphicalNode : public QGraphicsRectItem
 {
@@ -20,14 +21,17 @@ public:
   {
     setBrush(Qt::white);
     setAcceptHoverEvents(true);
+    m_nodeType = NODE;
   };
 
-  void getNodeID();
+  int getNodeID();
   void setVisited();
+  void set_nodeType(NodeTypes type);
 
 private:
-  void hoverEnterEvent(QGraphicsSceneHoverEvent* event) override;
-  void hoverLeaveEvent(QGraphicsSceneHoverEvent* event) override;
+
+  void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+  void keyPressEvent(QKeyEvent *event) override;
 
   const int m_nodeID;
   bool  m_visited;

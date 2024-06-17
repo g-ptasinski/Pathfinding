@@ -70,7 +70,6 @@ void MainWindow::on_Simulate_clicked()
 
 void MainWindow::on_GenerateGrid_clicked()
 {
-  map = std::make_unique<grid>(m_GridHeight,m_GridWidth);
 
   GenerateGridView();
 }
