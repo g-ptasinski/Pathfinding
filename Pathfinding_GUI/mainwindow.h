@@ -10,8 +10,6 @@
 #include <memory>
 #include <vector>
 
-#include "grid.h"
-#include "pathnode.h"
 #include "graphicalnode.h"
 
 QT_BEGIN_NAMESPACE
@@ -51,7 +49,6 @@ private:
   int m_RectWidth;
   int m_RectHeight;
 
-  std::unique_ptr<grid> map;
   std::vector<GraphicalNode *>  RectItemMap;
 };
 #endif // MAINWINDOW_H

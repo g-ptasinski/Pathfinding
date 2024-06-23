@@ -31,7 +31,7 @@ public:
 private:
 
   void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-  void keyPressEvent(QKeyEvent *event) override;
+  //void keyPressEvent(QKeyEvent *event) override;
 
   const int m_nodeID;
   bool  m_visited;
