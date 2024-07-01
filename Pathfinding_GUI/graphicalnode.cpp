@@ -24,11 +24,6 @@ void GraphicalNode::mousePressEvent(QGraphicsSceneMouseEvent *event)
         set_nodeType(NODE);
         setBrush(Qt::white);
     }
-    else if(event->button() == Qt::MiddleButton)
-      {
-          set_nodeType(START);
-          setBrush(Qt::green);
-      }
 }
 
 int GraphicalNode::getNodeID()
@@ -42,4 +37,8 @@ void GraphicalNode::setVisited()
   m_visited = true;
 }
 
+void GraphicalNode::setValue(int value)
+{
+  std::cout<<value<<std::endl;
+}
 

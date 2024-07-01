@@ -19,7 +19,7 @@ enum ActionType
     STARTFINISH=1
 };
 
-class GraphicalNode : public QGraphicsRectItem
+class GraphicalNode : public QGraphicsRectItem , public QObject
 {
 public:
   ///> Inherits constructors of the QGraphicsRectItem
@@ -43,6 +43,11 @@ private:
   bool  m_visited;
   int     m_nodeType;
   int     m_actionType;
+
+public slots:
+
+  void setValue(int value);
+
 };
 
 #endif // GRAPHICALNODE_H

@@ -24,6 +24,9 @@ public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
+signals:
+  void ValueChanged(int value);
+
 private slots:
 
   void on_Simulate_clicked();
@@ -38,6 +41,12 @@ private slots:
 
   void on_comboBox_currentTextChanged(const QString &arg1);
 
+  void on_graphicsView_rubberBandChanged(const QRect &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint);
+
+  void on_ID_number_customContextMenuRequested(const QPoint &pos);
+
+  void on_comboBox_textActivated(const QString &arg1);
+
 private:
   Ui::MainWindow *ui;
   QGraphicsScene *scene;
@@ -51,5 +60,7 @@ private:
 
   std::vector<GraphicalNode *>  RectItemMap;
   std::pair<int,int> StartFinishPair;
+
+
 };
 #endif // MAINWINDOW_H
