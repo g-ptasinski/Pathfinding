@@ -48,10 +48,9 @@ void MainWindow::GenerateGridView( void )
       GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth, tmpID);
 
       rec->setPos(i * rectsize, j * rectsize);
-
       scene->addItem(rec);
-      RectItemMap.push_back(rec);
 
+      RectItemMap.push_back(rec);
       tmpID++;
       }
     }
@@ -84,7 +83,8 @@ void MainWindow::on_Height_valueChanged(int arg1)
     m_GridHeight = arg1;
 }
 
+void MainWindow::on_comboBox_currentTextChanged(const QString &arg1)
+{
 
-
-
+}
 

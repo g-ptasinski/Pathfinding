@@ -13,6 +13,12 @@ enum NodeTypes
     BLOCKED
 };
 
+enum ActionType
+{
+    NODEBLOCK = 0,
+    STARTFINISH=1
+};
+
 class GraphicalNode : public QGraphicsRectItem
 {
 public:
@@ -27,17 +33,16 @@ public:
   int getNodeID();
   void setVisited();
   void set_nodeType(NodeTypes type);
+  void set_actionType(ActionType type);
 
 private:
 
   void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-  //void keyPressEvent(QKeyEvent *event) override;
 
   const int m_nodeID;
   bool  m_visited;
   int     m_nodeType;
-
-
+  int     m_actionType;
 };
 
 #endif // GRAPHICALNODE_H

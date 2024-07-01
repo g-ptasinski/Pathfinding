@@ -36,7 +36,7 @@ private slots:
 
   void GenerateGridView( void );
 
-  void on_graphicsView_rubberBandChanged(const QRect &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint);
+  void on_comboBox_currentTextChanged(const QString &arg1);
 
 private:
   Ui::MainWindow *ui;
@@ -50,5 +50,6 @@ private:
   int m_RectHeight;
 
   std::vector<GraphicalNode *>  RectItemMap;
+  std::pair<int,int> StartFinishPair;
 };
 #endif // MAINWINDOW_H

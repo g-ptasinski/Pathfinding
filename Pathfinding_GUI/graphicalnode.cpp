@@ -5,7 +5,11 @@
 void GraphicalNode::set_nodeType(NodeTypes type)
 {
     this->m_nodeType = type;
+}
 
+void GraphicalNode::set_actionType(ActionType type)
+{
+    this->m_actionType = type;
 }
 
 void GraphicalNode::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -20,23 +24,13 @@ void GraphicalNode::mousePressEvent(QGraphicsSceneMouseEvent *event)
         set_nodeType(NODE);
         setBrush(Qt::white);
     }
+    else if(event->button() == Qt::MiddleButton)
+      {
+          set_nodeType(START);
+          setBrush(Qt::green);
+      }
 }
 
-/*
-void GraphicalNode::keyPressEvent(QKeyEvent *event)
-{
-    if(event->key() ==Qt::Key_1)
-    {
-        set_nodeType(START);
-        setBrush(Qt::yellow);
-    }
-    else if(event->key() == Qt::Key_2)
-    {
-        set_nodeType(FINISH);
-        setBrush(Qt::green);
-    }
-}
-*/
 int GraphicalNode::getNodeID()
 {
   std::cout<<m_nodeType<<std::endl;
