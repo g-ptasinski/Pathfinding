@@ -56,6 +56,7 @@ void MainWindow::GenerateGridView( void )
       tmpID++;
       }
     }
+
   ui->graphicsView->resize( 880, 880 );
 
 }
