@@ -15,8 +15,8 @@ enum NodeTypes
 
 enum ActionType
 {
-    NODEBLOCK = 0,
-    STARTFINISH=1
+    STARTFINISH=0,
+    NODEBLOCK = 1
 };
 
 class GraphicalNode : public QGraphicsRectItem , public QObject
@@ -28,6 +28,7 @@ public:
     setBrush(Qt::white);
     setAcceptHoverEvents(true);
     m_nodeType = NODE;
+    m_actionType = 1;
   };
 
   int getNodeID();

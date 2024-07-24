@@ -14,21 +14,39 @@ void GraphicalNode::set_actionType(ActionType type)
 
 void GraphicalNode::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    if(event->button() == Qt::LeftButton)
+
+  if(m_actionType == 1)
     {
-        set_nodeType(BLOCKED);
-        setBrush(Qt::black);
+        if(event->button() == Qt::LeftButton)
+        {
+            set_nodeType(BLOCKED);
+            setBrush(Qt::black);
+        }
+        else if(event->button() == Qt::RightButton)
+        {
+            set_nodeType(NODE);
+            setBrush(Qt::white);
+        }
     }
-    else if(event->button() == Qt::RightButton)
+  else if(m_actionType == 0)
     {
-        set_nodeType(NODE);
-        setBrush(Qt::white);
+        if(event->button() == Qt::LeftButton)
+        {
+            set_nodeType(START);
+            setBrush(Qt::green);
+        }
+        else if(event->button() == Qt::RightButton)
+        {
+            set_nodeType(FINISH);
+            setBrush(Qt::blue);
+        }
     }
+
 }
 
 int GraphicalNode::getNodeID()
 {
-  std::cout<<m_nodeType<<std::endl;
+  //std::cout<<m_nodeType<<std::endl;
   return m_nodeType;;
 }
 
@@ -39,6 +57,7 @@ void GraphicalNode::setVisited()
 
 void GraphicalNode::setValue(int value)
 {
-  std::cout<<value<<std::endl;
+  m_actionType = value;
+  //std::cout<<value<<std::endl;
 }
 
