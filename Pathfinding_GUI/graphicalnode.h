@@ -19,8 +19,10 @@ enum ActionType
     NODEBLOCK = 1
 };
 
-class GraphicalNode : public QGraphicsRectItem , public QObject
+class GraphicalNode : public QObject, public QGraphicsRectItem
 {
+  Q_OBJECT
+
 public:
   ///> Inherits constructors of the QGraphicsRectItem
   GraphicalNode(qreal x, qreal y, qreal w, qreal h, int ID) : QGraphicsRectItem(x,y,w,h) , m_nodeID{ID}
@@ -36,9 +38,11 @@ public:
   void set_nodeType(NodeTypes type);
   void set_actionType(ActionType type);
 
+
 private:
 
   void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+  void hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
 
   const int m_nodeID;
   bool  m_visited;
@@ -47,7 +51,10 @@ private:
 
 public slots:
 
-  void setValue(int value);
+  void setValue(ActionType value);
+
+signals:
+    void sendID( int  m_nodeID);
 
 };
 

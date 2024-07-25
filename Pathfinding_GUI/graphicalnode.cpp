@@ -44,9 +44,13 @@ void GraphicalNode::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 }
 
+void GraphicalNode::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+{
+    emit sendID(m_nodeID);
+}
+
 int GraphicalNode::getNodeID()
 {
-  //std::cout<<m_nodeType<<std::endl;
   return m_nodeType;;
 }
 
@@ -55,9 +59,7 @@ void GraphicalNode::setVisited()
   m_visited = true;
 }
 
-void GraphicalNode::setValue(int value)
+void GraphicalNode::setValue(ActionType value)
 {
-  m_actionType = value;
-  //std::cout<<value<<std::endl;
+   set_actionType(value);
 }
-

@@ -50,7 +50,8 @@ void MainWindow::GenerateGridView( void )
       rec->setPos(i * rectsize, j * rectsize);
       scene->addItem(rec);
 
-      QObject::connect(this, &MainWindow::ValueChanged, rec, &GraphicalNode::setValue);
+      connect(this, &MainWindow::ValueChanged, rec, &GraphicalNode::setValue);
+      connect(rec, &GraphicalNode::sendID, this, &MainWindow::ReceiveID);
 
       RectItemMap.push_back(rec);
       tmpID++;
@@ -71,7 +72,6 @@ void MainWindow::on_Simulate_clicked()
 
 void MainWindow::on_GenerateGrid_clicked()
 {
-
   GenerateGridView();
 }
 
@@ -88,18 +88,20 @@ void MainWindow::on_Height_valueChanged(int arg1)
 void MainWindow::on_comboBox_currentTextChanged(const QString &arg1)
 {
   if(arg1 == "Start/Finish")
-    emit ValueChanged(0);
+    emit ValueChanged(STARTFINISH);
   else
-    emit ValueChanged(1);
+    emit ValueChanged(NODEBLOCK);
 }
-
-
 
 void MainWindow::on_comboBox_textActivated(const QString &arg1)
 {
   if(arg1 == "Start/Finish")
-    emit ValueChanged(0);
+    emit ValueChanged(STARTFINISH);
   else
-    emit ValueChanged(1);
+    emit ValueChanged(NODEBLOCK);
 }
 
+ void MainWindow::ReceiveID( int  m_nodeID)
+ {
+   std::cout<< m_nodeID<<std::endl;
+ }

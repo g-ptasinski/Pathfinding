@@ -25,9 +25,11 @@ public:
   ~MainWindow();
 
 signals:
-  void ValueChanged(int value);
+  void ValueChanged(ActionType value);
 
 private slots:
+
+  void ReceiveID( int  m_nodeID );
 
   void on_Simulate_clicked();
 
