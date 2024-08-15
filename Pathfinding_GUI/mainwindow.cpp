@@ -3,6 +3,7 @@
 #include <QMouseEvent>
 
 #include "mainwindow.h"
+#include "GridOfNodes.h"
 #include "graphicalnode.h"
 #include "ui_mainwindow.h"
 
@@ -17,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
   m_ViewWidth = ui->graphicsView->width();
   m_ViewHeight = ui->graphicsView->height();
+
 
 }
 
@@ -54,6 +56,7 @@ void MainWindow::GenerateGridView( void )
       connect(rec, &GraphicalNode::sendID, this, &MainWindow::ReceiveID);
 
       RectItemMap.push_back(rec);
+      nodes_grid->WriteNodeIntoGrid(rec);
       tmpID++;
       }
     }
@@ -73,6 +76,7 @@ void MainWindow::on_Simulate_clicked()
 void MainWindow::on_GenerateGrid_clicked()
 {
   GenerateGridView();
+
 }
 
 void MainWindow::on_Width_valueChanged(int arg1)

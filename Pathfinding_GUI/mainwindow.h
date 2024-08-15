@@ -10,6 +10,7 @@
 #include <memory>
 #include <vector>
 
+#include "GridOfNodes.h"
 #include "graphicalnode.h"
 
 QT_BEGIN_NAMESPACE
@@ -56,6 +57,7 @@ private:
   int m_RectWidth;
   int m_RectHeight;
 
+  GridOfNodes* nodes_grid = new GridOfNodes();
   std::vector<GraphicalNode *>  RectItemMap;
   std::pair<int,int> StartFinishPair;
 };
