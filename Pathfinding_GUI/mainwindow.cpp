@@ -55,7 +55,6 @@ void MainWindow::GenerateGridView( void )
       connect(this, &MainWindow::ValueChanged, rec, &GraphicalNode::setValue);
       connect(rec, &GraphicalNode::sendID, this, &MainWindow::ReceiveID);
 
-      RectItemMap.push_back(rec);
       nodes_grid->WriteNodeIntoGrid(rec);
       tmpID++;
       }
@@ -67,10 +66,7 @@ void MainWindow::GenerateGridView( void )
 
 void MainWindow::on_Simulate_clicked()
 {
-    for(GraphicalNode *item : RectItemMap)
-    {
-        item->getNodeID();
-    }
+    //todo connect algorithm
 }
 
 void MainWindow::on_GenerateGrid_clicked()
@@ -107,5 +103,5 @@ void MainWindow::on_comboBox_textActivated(const QString &arg1)
 
  void MainWindow::ReceiveID( int  m_nodeID)
  {
-   std::cout<< m_nodeID<<std::endl;
+     ui->lcdNumber->display( m_nodeID);
  }

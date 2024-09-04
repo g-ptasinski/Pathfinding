@@ -58,7 +58,6 @@ private:
   int m_RectHeight;
 
   GridOfNodes* nodes_grid = new GridOfNodes();
-  std::vector<GraphicalNode *>  RectItemMap;
   std::pair<int,int> StartFinishPair;
 };
 #endif // MAINWINDOW_H

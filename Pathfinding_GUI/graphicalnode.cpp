@@ -51,12 +51,21 @@ void GraphicalNode::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 
 int GraphicalNode::getNodeID()
 {
-  return m_nodeType;;
+  return m_nodeID;
 }
 
 void GraphicalNode::setVisited()
 {
-  m_visited = true;
+    if(m_nodeType == NODE)
+    {
+        m_visited = true;
+        setBrush(Qt::gray);
+    }
+    else
+    {
+        std::cerr <<"You cannot visit object of this type"<<std::endl;
+        std::cerr <<"Type: "<< m_nodeType<<std::endl;
+    }
 }
 
 void GraphicalNode::setValue(ActionType value)
