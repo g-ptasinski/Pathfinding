@@ -9,3 +9,4 @@ void GridOfNodes::WriteNodeIntoGrid(GraphicalNode * node)
 {
     _RectItemMap.push_back(node);
 }
+

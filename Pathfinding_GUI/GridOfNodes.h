@@ -1,7 +1,6 @@
 #ifndef GRIDOFNODES_H
 #define GRIDOFNODES_H
 
-#include <memory>
 #include <vector>
 
 #include "graphicalnode.h"

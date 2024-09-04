@@ -1,4 +1,3 @@
-#include <iostream>
 #include <QGraphicsItem>
 #include <QMouseEvent>
 
@@ -18,8 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
 
   m_ViewWidth = ui->graphicsView->width();
   m_ViewHeight = ui->graphicsView->height();
-
-
 }
 
 MainWindow::~MainWindow()
@@ -37,6 +34,15 @@ void MainWindow::GenerateGridView( void )
 
   int rectsize    = ( m_RectWidth > m_RectHeight) ? m_RectHeight : m_RectWidth ;
   int linewidth  = 3;
+  if(m_GridWidth*m_GridHeight < 700)
+  {
+    linewidth  = 3;
+  }
+  else
+  {
+      linewidth  = 1;
+  }
+
 
   QGraphicsScene *scene = new QGraphicsScene;
   ui->graphicsView->setScene(scene);
@@ -61,7 +67,6 @@ void MainWindow::GenerateGridView( void )
     }
 
   ui->graphicsView->resize( 880, 880 );
-//sdadas
 }
 
 void MainWindow::on_Simulate_clicked()
