@@ -61,7 +61,7 @@ void MainWindow::GenerateGridView( void )
     }
 
   ui->graphicsView->resize( 880, 880 );
-
+//sdadas
 }
 
 void MainWindow::on_Simulate_clicked()

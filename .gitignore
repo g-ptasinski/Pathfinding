@@ -35,8 +35,8 @@ Thumbs.db
 /.qmake.cache
 /.qmake.stash
 /build*
-/build-Pathfinding_GUI-Desktop_Qt_6_2_1_MinGW_64_bit-Debug
-/build-Pathfinding_GUI-Desktop-Debug
+/build-Pathfinding_GUI-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/
+/build-Pathfinding_GUI-Desktop-Debug/
 
 # qtcreator generated files
 *.pro.user*
