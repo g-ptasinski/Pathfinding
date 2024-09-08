@@ -37,6 +37,7 @@ Thumbs.db
 /build*/
 /build-Pathfinding_GUI-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/
 /build-Pathfinding_GUI-Desktop-Debug/
+/Pathfinding_GUI/build/
 
 # qtcreator generated files
 *.pro.user*
