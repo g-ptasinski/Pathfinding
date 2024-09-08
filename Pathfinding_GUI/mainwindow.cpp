@@ -60,6 +60,8 @@ void MainWindow::GenerateGridView( void )
 
       connect(this, &MainWindow::ValueChanged, rec, &GraphicalNode::setValue);
       connect(rec, &GraphicalNode::sendID, this, &MainWindow::ReceiveID);
+      connect(rec, &GraphicalNode::sendStart, nodes_grid, &GridOfNodes::getStart);
+      connect(rec, &GraphicalNode::sendFinish, nodes_grid, &GridOfNodes::getFinish);
 
       nodes_grid->WriteNodeIntoGrid(rec);
       tmpID++;
@@ -71,13 +73,12 @@ void MainWindow::GenerateGridView( void )
 
 void MainWindow::on_Simulate_clicked()
 {
-    //todo connect algorithm
+    nodes_grid->PrintStartFinish();
 }
 
 void MainWindow::on_GenerateGrid_clicked()
 {
   GenerateGridView();
-
 }
 
 void MainWindow::on_Width_valueChanged(int arg1)

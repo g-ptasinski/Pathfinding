@@ -38,7 +38,6 @@ public:
   void set_nodeType(NodeTypes type);
   void set_actionType(ActionType type);
 
-
 private:
 
   void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
@@ -55,6 +54,8 @@ public slots:
 
 signals:
     void sendID( int  m_nodeID);
+    void sendStart(GraphicalNode * node);
+    void sendFinish(GraphicalNode * node);
 
 };
 

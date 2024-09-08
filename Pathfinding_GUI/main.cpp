@@ -1,10 +1,4 @@
-#include <iostream>
-#include <memory>
-#include <vector>
-
 #include "mainwindow.h"
-
-
 #include <QApplication>
 
 int main(int argc, char *argv[])
