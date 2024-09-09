@@ -2,7 +2,7 @@
 #include <QMouseEvent>
 
 #include "mainwindow.h"
-#include "GridOfNodes.h"
+#include "gridofnodes.h"
 #include "graphicalnode.h"
 #include "ui_mainwindow.h"
 
@@ -26,23 +26,23 @@ MainWindow::~MainWindow()
 
 void MainWindow::GenerateGridView( void )
 {
-  m_ViewWidth = ui->graphicsView->width();
-  m_ViewHeight = ui->graphicsView->height();
+  m_ViewWidth = 880;//ui->graphicsView->width();
+  m_ViewHeight = 880;//ui->graphicsView->height();
 
-  m_RectWidth   = 850/(m_GridWidth);
-  m_RectHeight  = 850/(m_GridHeight);
-
-  int rectsize    = ( m_RectWidth > m_RectHeight) ? m_RectHeight : m_RectWidth ;
   int linewidth  = 3;
   if(m_GridWidth*m_GridHeight < 700)
   {
-    linewidth  = 3;
+      linewidth  = 3;
   }
   else
   {
       linewidth  = 1;
   }
 
+  m_RectWidth   = m_ViewWidth/(m_GridWidth)-linewidth;
+  m_RectHeight  = m_ViewHeight/(m_GridHeight)-linewidth;
+
+  int rectsize    = ( m_RectWidth > m_RectHeight) ? m_RectHeight : m_RectWidth ;
 
   QGraphicsScene *scene = new QGraphicsScene;
   ui->graphicsView->setScene(scene);
@@ -53,7 +53,7 @@ void MainWindow::GenerateGridView( void )
     {
     for (int j = 0; j < m_GridWidth; j++)
       {
-      GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth, tmpID);
+      GraphicalNode *rec = new GraphicalNode(0, 0, rectsize+linewidth, rectsize+linewidth, tmpID);
 
       rec->setPos(i * rectsize, j * rectsize);
       scene->addItem(rec);
@@ -68,7 +68,7 @@ void MainWindow::GenerateGridView( void )
       }
     }
 
-  ui->graphicsView->resize( 880, 880 );
+  ui->graphicsView->resize( 880 , 880 );
 }
 
 void MainWindow::on_Simulate_clicked()

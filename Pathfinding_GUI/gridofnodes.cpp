@@ -1,4 +1,4 @@
-#include "GridOfNodes.h"
+#include "gridofnodes.h"
 #include <iostream>
 
 GridOfNodes::GridOfNodes()

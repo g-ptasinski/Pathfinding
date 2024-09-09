@@ -10,7 +10,7 @@
 #include <memory>
 #include <vector>
 
-#include "GridOfNodes.h"
+#include "gridofnodes.h"
 #include "graphicalnode.h"
 
 QT_BEGIN_NAMESPACE
