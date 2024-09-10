@@ -11,6 +11,7 @@ public:
     ~DepthFirstSearch(){};
 
     void TestFunct() override;
+    void Find(GridOfNodes* grid) override;
 };
 
 #endif // DEPTHFIRSTSEARCH_H

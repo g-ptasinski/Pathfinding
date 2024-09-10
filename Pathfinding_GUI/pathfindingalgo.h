@@ -2,6 +2,7 @@
 #define PATHFINDINGALGO_H
 
 #include <iostream>
+#include "gridofnodes.h"
 
 class PathFindingAlgo
 {
@@ -10,6 +11,7 @@ public:
     ~PathFindingAlgo(){};
 
     virtual void TestFunct(){std::cout<<"Base test funct"<<std::endl;};
+    virtual void Find(GridOfNodes* grid){};
 };
 
 #endif // PATHFINDINGALGO_H
