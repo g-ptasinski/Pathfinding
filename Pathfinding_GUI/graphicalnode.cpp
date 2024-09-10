@@ -78,7 +78,21 @@ void GraphicalNode::setVisited()
     else
     {
         std::cerr <<"You cannot visit object of this type"<<std::endl;
-        std::cerr <<"Type: "<< m_nodeType<<std::endl;
+        std::cerr <<"Type: "<< m_nodeType<< "ID" << m_nodeID  <<std::endl;
+    }
+}
+
+void GraphicalNode::setPartOfPath()
+{
+    if(m_nodeType == NODE)
+    {
+        m_partOfPath = true;
+        setBrush(Qt::cyan);
+    }
+    else
+    {
+        std::cerr <<"You cannot visit object of this type"<<std::endl;
+        std::cerr <<"Type: "<< m_nodeType<< "ID" << m_nodeID <<std::endl;
     }
 }
 

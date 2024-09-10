@@ -6,6 +6,7 @@
 #include "gridofnodes.h"
 #include "graphicalnode.h"
 #include "ui_mainwindow.h"
+#include "depthfirstsearch.h"
 
 MainWindow::MainWindow(QWidget *parent)
   : QMainWindow(parent)
@@ -73,6 +74,8 @@ void MainWindow::GenerateGridView( void )
 void MainWindow::on_Simulate_clicked()
 {
     nodes_grid->PrintStartFinish();
+    std::unique_ptr<PathFindingAlgo> pathfinding = std::make_unique<DepthFirstSearch>();
+    pathfinding->TestFunct();
 }
 
 void MainWindow::on_GenerateGrid_clicked()

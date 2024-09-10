@@ -3,7 +3,7 @@
 
 GridOfNodes::GridOfNodes()
 {
-
+    _StartFinishPair = {nullptr, nullptr};
 }
 
 void GridOfNodes::WriteNodeIntoGrid(GraphicalNode * node)
@@ -33,6 +33,7 @@ void GridOfNodes::getFinish(GraphicalNode * node)
 {
     SetFinish(node);
 }
+
 void GridOfNodes::getStart(GraphicalNode * node)
 {
     SetStart(node);
@@ -40,5 +41,13 @@ void GridOfNodes::getStart(GraphicalNode * node)
 
 void GridOfNodes::PrintStartFinish()
 {
-    std::cout<< _StartFinishPair.first->getNodeID()<<" "<< _StartFinishPair.second->getNodeID()<<std::endl;
+    if(_StartFinishPair.first != nullptr && _StartFinishPair.second != nullptr)
+    {
+        std::cout<< _StartFinishPair.first->getNodeID()<<" "<< _StartFinishPair.second->getNodeID()<<std::endl;
+    }
+    else
+    {
+        std::cout<<"Something's lacking, Start or Finish"<<std::endl;
+    }
+
 }

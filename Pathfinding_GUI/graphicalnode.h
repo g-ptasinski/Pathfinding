@@ -30,11 +30,14 @@ public:
     setBrush(Qt::white);
     setAcceptHoverEvents(true);
     m_nodeType = NODE;
+    m_partOfPath = false;
+    m_visited       = false;
     m_actionType = 1;
   };
 
   int getNodeID();
   void setVisited();
+  void setPartOfPath();
   void set_nodeType(NodeTypes type);
   void set_actionType(ActionType type);
 
@@ -45,6 +48,7 @@ private:
 
   const int m_nodeID;
   bool  m_visited;
+  bool  m_partOfPath;
   int     m_nodeType;
   int     m_actionType;
 
