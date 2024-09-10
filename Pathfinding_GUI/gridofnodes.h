@@ -17,10 +17,15 @@ public:
   void SetFinish(GraphicalNode * node);
   void PrintStartFinish();
 
+  GraphicalNode* getStartPtr();
+  GraphicalNode* getFinishPtr();
+
   public slots:
 
   void getStart(GraphicalNode * node);
   void getFinish(GraphicalNode * node);
+
+
 
 private:
   std::vector<GraphicalNode *>  _RectItemMap;

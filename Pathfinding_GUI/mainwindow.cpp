@@ -73,9 +73,9 @@ void MainWindow::GenerateGridView( void )
 
 void MainWindow::on_Simulate_clicked()
 {
-    nodes_grid->PrintStartFinish();
     std::unique_ptr<PathFindingAlgo> pathfinding = std::make_unique<DepthFirstSearch>();
-    pathfinding->TestFunct();
+
+    pathfinding->Find(nodes_grid);
 }
 
 void MainWindow::on_GenerateGrid_clicked()

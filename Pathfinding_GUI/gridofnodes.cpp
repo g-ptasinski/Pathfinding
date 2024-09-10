@@ -47,7 +47,35 @@ void GridOfNodes::PrintStartFinish()
     }
     else
     {
-        std::cout<<"Something's lacking, Start or Finish"<<std::endl;
+        std::cerr<<"Something's lacking, Start or Finish"<<std::endl;
     }
 
+}
+
+GraphicalNode* GridOfNodes::getStartPtr()
+{
+    if( _StartFinishPair.second!=nullptr)
+    {
+        return _StartFinishPair.second;
+    }
+    else
+    {
+        std::cerr<<"Start is not defined"<<std::endl;
+    }
+
+    return nullptr;
+}
+
+GraphicalNode* GridOfNodes::getFinishPtr()
+{
+    if( _StartFinishPair.first!=nullptr)
+    {
+        return _StartFinishPair.first;
+    }
+    else
+    {
+        std::cerr<<"Finish is not defined"<<std::endl;
+    }
+
+    return nullptr;
 }
