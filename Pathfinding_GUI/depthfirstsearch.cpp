@@ -21,5 +21,4 @@ void DepthFirstSearch::Find(GridOfNodes* grid)
     callstack.push(grid->getStartPtr()); //first point is start
     //callstack.push(grid->getPoint());
    // callstack.top()->setVisited();
-
 }

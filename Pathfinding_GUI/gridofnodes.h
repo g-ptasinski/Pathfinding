@@ -12,6 +12,8 @@ public:
     GridOfNodes();
     ~GridOfNodes(){};
 
+    int getSize(){return std::sqrt(_RectItemMap.size());};
+
   void WriteNodeIntoGrid(GraphicalNode * node);
   void SetStart(GraphicalNode * node);
   void SetFinish(GraphicalNode * node);
