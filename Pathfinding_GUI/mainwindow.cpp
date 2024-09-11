@@ -31,44 +31,43 @@ void MainWindow::GenerateGridView( void )
     m_ViewWidth = ui->graphicsView->width();
     m_ViewHeight = ui->graphicsView->height();
 
+      m_RectWidth   = 900/(m_GridWidth);
+      m_RectHeight  = 900/(m_GridHeight);
+      int linewidth  = 1;
+      int rectsize    = m_RectWidth;
 
-  m_RectWidth   = 900/(m_GridWidth);
-  m_RectHeight  = 900/(m_GridHeight);
-  int linewidth  = 1;
-  int rectsize    = m_RectWidth;
+      int width=0;
+      int height=0;
+      int tmpID = 0;
 
-  int width=0;
-  int height=0;
+      QGraphicsScene *scene = new QGraphicsScene;
+      ui->graphicsView->setScene(scene);
 
-  QGraphicsScene *scene = new QGraphicsScene;
-  ui->graphicsView->setScene(scene);
 
-  int tmpID = 0;
 
-  for (int i = 0; i < m_GridHeight; i++)
-    {
-    for (int j = 0; j < m_GridWidth; j++)
-      {
-      GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth, tmpID);
+      for (int i = 0; i < m_GridHeight; i++)
+        {
+        for (int j = 0; j < m_GridWidth; j++)
+          {
+          GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth, tmpID);
 
-        height=i * rectsize;
-        width= j * rectsize;
+            height=i * rectsize;
+            width= j * rectsize;
 
-      rec->setPos(i * rectsize, j * rectsize);
-      scene->addItem(rec);
+          rec->setPos(height , width);
+          scene->addItem(rec);
 
-      connect(this, &MainWindow::ValueChanged, rec, &GraphicalNode::setValue);
-      connect(rec, &GraphicalNode::sendID, this, &MainWindow::ReceiveID);
-      connect(rec, &GraphicalNode::sendStart, nodes_grid, &GridOfNodes::getStart);
-      connect(rec, &GraphicalNode::sendFinish, nodes_grid, &GridOfNodes::getFinish);
+          connect(this, &MainWindow::ValueChanged, rec, &GraphicalNode::setValue);
+          connect(rec, &GraphicalNode::sendID, this, &MainWindow::ReceiveID);
+          connect(rec, &GraphicalNode::sendStart, nodes_grid, &GridOfNodes::getStart);
+          connect(rec, &GraphicalNode::sendFinish, nodes_grid, &GridOfNodes::getFinish);
 
-      nodes_grid->WriteNodeIntoGrid(rec);
-      tmpID++;
-      }
-    }
+          nodes_grid->WriteNodeIntoGrid(rec);
+          tmpID++;
+          }
+        }
 
-  ui->graphicsView->resize( width+rectsize ,height+rectsize);
-    std::cout<<width+rectsize<<std::endl;
+      //ui->graphicsView->resize( width+rectsize ,height+rectsize);
 }
 
 void MainWindow::on_Simulate_clicked()

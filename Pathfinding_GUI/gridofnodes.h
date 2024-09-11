@@ -9,7 +9,7 @@ class GridOfNodes : public QObject
       Q_OBJECT
 
 public:
-  GridOfNodes();
+    GridOfNodes();
     ~GridOfNodes(){};
 
   void WriteNodeIntoGrid(GraphicalNode * node);
@@ -24,8 +24,6 @@ public:
 
   void getStart(GraphicalNode * node);
   void getFinish(GraphicalNode * node);
-
-
 
 private:
   std::vector<GraphicalNode *>  _RectItemMap;

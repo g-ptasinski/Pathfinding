@@ -19,5 +19,7 @@ void DepthFirstSearch::Find(GridOfNodes* grid)
     std::stack<GraphicalNode*, std::vector<GraphicalNode*>> callstack;
 
     callstack.push(grid->getStartPtr()); //first point is start
+    //callstack.push(grid->getPoint());
+   // callstack.top()->setVisited();
 
 }
