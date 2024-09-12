@@ -23,6 +23,11 @@ class GridOfNodes : public QObject
     void PrintStartFinish();
     void SaveNeighbours();
 
+    bool isLeft(GraphicalNode* node);
+    bool isRight(GraphicalNode* node);
+    bool isTop(GraphicalNode* node);
+    bool isBottom(GraphicalNode* node);
+
     GraphicalNode* getStartPtr();
     GraphicalNode* getFinishPtr();
 

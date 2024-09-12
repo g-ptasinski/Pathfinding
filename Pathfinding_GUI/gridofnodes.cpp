@@ -82,7 +82,10 @@ GraphicalNode* GridOfNodes::getFinishPtr()
 
 void GridOfNodes::SaveNeighbours()
 {
+    for(auto node : _RectItemMap)
+    {
 
+    }
 }
 
 void GridOfNodes::SetWidth(int w)
@@ -93,4 +96,60 @@ void GridOfNodes::SetWidth(int w)
 void GridOfNodes::SetHeight(int h)
 {
     _height = h;
+}
+
+bool GridOfNodes::isLeft(GraphicalNode* node)
+{
+    int ID = node->getNodeID();
+
+    if( ID%_width==0 )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool GridOfNodes::isRight(GraphicalNode* node)
+{
+    int ID = node->getNodeID();
+
+    if( ID%_width==0 )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool GridOfNodes::isTop(GraphicalNode* node)
+{
+    int ID = node->getNodeID();
+
+    if(ID < _width )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool GridOfNodes::isBottom(GraphicalNode* node)
+{
+    int ID = node->getNodeID();
+
+    if(ID > (_RectItemMap.size()-_width))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
