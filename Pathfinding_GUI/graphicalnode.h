@@ -33,9 +33,23 @@ public:
     m_partOfPath = false;
     m_visited       = false;
     m_actionType = 1;
+
+    top = nullptr;
+    bottom = nullptr;
+    left = nullptr;
+    right = nullptr;
+
   };
 
+  GraphicalNode * top;
+  GraphicalNode * bottom;
+  GraphicalNode * left;
+  GraphicalNode * right;
+
+  bool isVisited();
+  bool isNode();
   int getNodeID();
+
   void setVisited();
   void setPartOfPath();
   void set_nodeType(NodeTypes type);

@@ -79,3 +79,18 @@ GraphicalNode* GridOfNodes::getFinishPtr()
 
     return nullptr;
 }
+
+void GridOfNodes::SaveNeighbours()
+{
+
+}
+
+void GridOfNodes::SetWidth(int w)
+{
+    _width = w;
+}
+
+void GridOfNodes::SetHeight(int h)
+{
+    _height = h;
+}

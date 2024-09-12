@@ -8,28 +8,34 @@ class GridOfNodes : public QObject
 {
       Q_OBJECT
 
-public:
+  public:
     GridOfNodes();
     ~GridOfNodes(){};
 
     int getSize(){return std::sqrt(_RectItemMap.size());};
 
-  void WriteNodeIntoGrid(GraphicalNode * node);
-  void SetStart(GraphicalNode * node);
-  void SetFinish(GraphicalNode * node);
-  void PrintStartFinish();
+    void WriteNodeIntoGrid(GraphicalNode * node);
+    void SetStart(GraphicalNode * node);
+    void SetFinish(GraphicalNode * node);
+    void SetHeight(int h);
+    void SetWidth(int w);
 
-  GraphicalNode* getStartPtr();
-  GraphicalNode* getFinishPtr();
+    void PrintStartFinish();
+    void SaveNeighbours();
+
+    GraphicalNode* getStartPtr();
+    GraphicalNode* getFinishPtr();
 
   public slots:
-
   void getStart(GraphicalNode * node);
   void getFinish(GraphicalNode * node);
 
-private:
-  std::vector<GraphicalNode *>  _RectItemMap;
-  std::pair<GraphicalNode * , GraphicalNode *> _StartFinishPair;
+  private:
+    int _width;
+    int _height;
+    std::vector<GraphicalNode *>  _RectItemMap;
+    std::pair<GraphicalNode * , GraphicalNode *> _StartFinishPair;
+
 };
 
 #endif // GRIDOFNODES_H

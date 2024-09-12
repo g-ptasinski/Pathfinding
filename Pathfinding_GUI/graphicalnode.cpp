@@ -91,7 +91,7 @@ void GraphicalNode::setPartOfPath()
     }
     else
     {
-        std::cerr <<"You cannot visit object of this type"<<std::endl;
+        std::cerr <<"You cannot make path with object of this type"<<std::endl;
         std::cerr <<"Type: "<< m_nodeType<< "ID" << m_nodeID <<std::endl;
     }
 }
@@ -99,4 +99,14 @@ void GraphicalNode::setPartOfPath()
 void GraphicalNode::setValue(ActionType value)
 {
    set_actionType(value);
+}
+
+bool GraphicalNode::isVisited()
+{
+    return m_visited;
+}
+
+bool GraphicalNode::isNode()
+{
+    return(m_nodeType==NODE);
 }

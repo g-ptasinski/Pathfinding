@@ -43,7 +43,8 @@ void MainWindow::GenerateGridView( void )
       QGraphicsScene *scene = new QGraphicsScene;
       ui->graphicsView->setScene(scene);
 
-
+      nodes_grid->SetWidth(m_GridWidth);
+      nodes_grid->SetHeight(m_GridHeight);
 
       for (int i = 0; i < m_GridHeight; i++)
         {
@@ -51,8 +52,8 @@ void MainWindow::GenerateGridView( void )
           {
           GraphicalNode *rec = new GraphicalNode(0, 0, rectsize-linewidth, rectsize-linewidth, tmpID);
 
-            height=i * rectsize;
-            width= j * rectsize;
+            height = i * rectsize;
+            width  = j * rectsize;
 
           rec->setPos(height , width);
           scene->addItem(rec);
@@ -74,7 +75,7 @@ void MainWindow::on_Simulate_clicked()
 {
     std::unique_ptr<PathFindingAlgo> pathfinding = std::make_unique<DepthFirstSearch>();
 
-    pathfinding->Find(nodes_grid);
+    pathfinding->_Find(nodes_grid);
 }
 
 void MainWindow::on_GenerateGrid_clicked()
